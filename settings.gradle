@@ -1,0 +1,4 @@
+rootProject.name = 'wExampleScript'
+
+include ':powbot-bt'
+project(':powbot-bt').projectDir = file('libs/powbot-bt')

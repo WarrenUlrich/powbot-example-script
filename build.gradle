@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id "org.jetbrains.kotlin.jvm" version "1.7.10"
+}
+
+group 'org.warren'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    google()
+    maven {
+        url = uri("https://repo.powbot.org/releases")
+    }
+}
+
+dependencies {
+    implementation project(':powbot-bt')
+
+    implementation('org.powbot:client-sdk:1.+')
+    implementation('org.powbot:client-sdk-loader:1.+')
+    implementation('com.google.guava:guava:31.1-jre')
+    implementation('com.squareup.okhttp:okhttp:2.7.5')
+    implementation('org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4')
+    compileOnly('com.google.code.gson:gson:2.8.6')
+    implementation "com.fasterxml.jackson.core:jackson-core:2.17.+"     // provides TypeReference
+    implementation "com.fasterxml.jackson.core:jackson-databind:2.17.+"
+
+    implementation "org.slf4j:slf4j-api:2.0.+"
+    runtimeOnly  "ch.qos.logback:logback-classic:1.5.+"  // or: runtimeOnly "org.slf4j:slf4j-simple:2.0.+"
+}
