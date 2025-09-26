@@ -1,0 +1,3 @@
+[submodule "libs/powbot-bt"]
+	path = libs/powbot-bt
+	url = https://github.com/WarrenUlrich/powbot-bt
