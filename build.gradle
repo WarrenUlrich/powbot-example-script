@@ -17,8 +17,8 @@ repositories {
 dependencies {
     implementation project(':powbot-bt')
 
-    implementation('org.powbot:client-sdk:1.+')
-    implementation('org.powbot:client-sdk-loader:1.+')
+    implementation('org.powbot:client-sdk:3.0.0-SNAPSHOT')
+    implementation('org.powbot:client-sdk-loader:3.0.0-SNAPSHOT')
     implementation('com.google.guava:guava:31.1-jre')
     implementation('com.squareup.okhttp:okhttp:2.7.5')
     implementation('org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4')
