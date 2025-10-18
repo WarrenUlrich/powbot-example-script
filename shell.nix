@@ -2,19 +2,18 @@
 
 pkgs.mkShell {
   buildInputs = with pkgs; [
-    gradle
+    gradle_7
     zulu17
   ];
 
   shellHook = ''
-    export JAVA_HOME=${pkgs.zulu17}
-    export PATH=$JAVA_HOME/bin:$PATH
+    export JAVA_HOME=${pkgs.openjdk17}
+    export GRADLE_HOME=${pkgs.gradle_8}
+    export PATH=$GRADLE_HOME/bin:$JAVA_HOME/bin:$PATH
 
     echo "JAVA_HOME set to $JAVA_HOME"
+    echo "GRADLE_HOME set to $GRADLE_HOME"
     java -version
-
-    cat > $PWD/gradle.properties <<EOF
-org.gradle.java.home=$JAVA_HOME
-EOF
+    gradle -v | head -n 1
   '';
 }
